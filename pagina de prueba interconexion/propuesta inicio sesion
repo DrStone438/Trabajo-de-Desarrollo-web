@@ -1,0 +1,57 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+
+// Configuración
+const app = express();
+const port = 3000;
+const SECRET_KEY = 'mi_clave_secreta'; // Cambiar por una clave segura en producción
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+// Datos simulados para el ejemplo
+const users = [
+    {
+        email: 'usuario@ejemplo.com',
+        password: bcrypt.hashSync('123456', 10), // Contraseña encriptada
+        name: 'Juan Pérez',
+    },
+];
+
+// Ruta de inicio de sesión
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    // Validar que el email y la contraseña no estén vacíos
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Por favor, completa todos los campos.' });
+    }
+
+    // Buscar usuario en la base de datos
+    const user = users.find((u) => u.email === email);
+    if (!user) {
+        return res.status(401).json({ message: 'Correo o contraseña incorrectos.' });
+    }
+
+    // Comparar la contraseña ingresada con la almacenada
+    const isPasswordValid = bcrypt.compareSync(password, user.password);
+    if (!isPasswordValid) {
+        return res.status(401).json({ message: 'Correo o contraseña incorrectos.' });
+    }
+
+    // Generar token JWT
+    const token = jwt.sign({ email: user.email, name: user.name }, SECRET_KEY, {
+        expiresIn: '1h',
+    });
+
+    return res.json({ message: 'Inicio de sesión exitoso.', token });
+});
+
+// Iniciar el servidor
+app.listen(port, () => {
+    console.log(`Servidor ejecutándose en http://localhost:${port}`);
+});
