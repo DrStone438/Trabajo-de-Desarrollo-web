@@ -1,0 +1,185 @@
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="text-center mb-4">Crear una cuenta</h2>
+          <form action="users/signup" method="POST">
+            <!-- Nombres -->
+            <div class="mb-3">
+              <label for="nombres" class="form-label">Nombres</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="nombres"
+                placeholder="Ingresa tus nombres"
+                maxlength="60"
+                required
+              />
+            </div>
+
+            <!-- Apellidos -->
+            <div class="mb-3">
+              <label for="apellidos" class="form-label">Apellidos</label>
+              <input
+                type="text"
+                class="form-control"
+                name="apellido"
+                id="apellidos"
+                placeholder="Ingresa tus apellidos"
+                maxlength="60"
+                required
+              />
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Ingresa tu correo electrónico"
+                maxlength="60"
+                required
+              />
+            </div>
+
+            <!-- run -->
+            <div class="mb-3">
+              <label for="run" class="form-label">run</label>
+              <input
+                type="text"
+                class="form-control"
+                name="run"
+                id="run"
+                placeholder="Ingresa tu run"
+                maxlength="9"
+                required
+              />
+            </div>
+            <!-- direccion -->
+            <div class="mb-3">
+              <label for="direccion" class="form-label">direccion</label>
+              <input
+                type="text"
+                class="form-control"
+                name="direccion"
+                id="direccion"
+                placeholder="Ingresa tu direccion"
+                required
+              />
+            </div>
+            <!-- comuna -->
+            <div class="mb-3">
+              <label for="comuna" class="form-label">comuna</label>
+              <input
+                type="text"
+                class="form-control"
+                name="comuna"
+                id="comuna"
+                placeholder="Ingresa tu comuna"
+                required
+              />
+            </div>
+            <!-- provincia -->
+            <div class="mb-3">
+              <label for="provincia" class="form-label">provincia</label>
+              <input
+                type="text"
+                class="form-control"
+                name="provincia"
+                id="provincia"
+                placeholder="Ingresa tu provincia"
+                required
+              />
+            </div>
+            <!-- region -->
+            <div class="mb-3">
+              <label for="region" class="form-label">region</label>
+              <input
+                type="text"
+                class="form-control"
+                name="region"
+                id="region"
+                placeholder="Ingresa tu region"
+                required
+              />
+            </div>
+            <!-- fecha de nacimiento -->
+            <div class="mb-3">
+              <label for="fecha_nacimiento" class="form-label">fecha de nacimiento</label>
+              <input
+                type="text"
+                class="form-control"
+                name="fecha_nacimiento"
+                id="nacimiento"
+                placeholder="Ingresa tu fecha de nacimiento"
+                required
+              />
+            </div>
+            <!-- sexo -->
+            <div class="mb-3">
+              <label for="sexo" class="form-label">sexo</label>
+              <input
+                type="text"
+                class="form-control"
+                name="sexo"
+                id="sexo"
+                placeholder="Ingresa tu sexo"
+                required
+              />
+            </div>
+            <!-- Teléfono -->
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Numero_telefono"
+                id="telefono"
+                placeholder="Ingresa tu número de teléfono"
+                maxlength="60"
+                pattern="[+]?[0-9]*" <!-- Solo permite números y el símbolo "+" -->
+              />
+            </div>
+
+
+
+            <!-- Contraseña -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                name="contraseña"
+                id="password"
+                placeholder="Ingresa tu contraseña"
+                maxlength="60"
+                required
+              />
+            </div>
+
+            <!-- Confirmar Contraseña -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                name="confirm_password"
+                id="confirmPassword"
+                placeholder="Confirma tu contraseña"
+                maxlength="60"
+                required
+              />
+            </div>
+
+            <!-- Botón para enviar -->
+            <button type="submit" class="btn btn-primary w-100">
+              Crear
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
