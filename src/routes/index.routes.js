@@ -1,13 +1,15 @@
 const { Router } = require('express')
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.render('index')
-})
+const { renderIndex, renderMenu, renderLogin, renderRegistro} = require('../controllers/index.controller')
 
-router.get('/Menu', (req, res) => {
-    res.render('Menu')
-})
+router.get('/', renderIndex);
+
+router.get('/Menu', renderMenu);
+
+router.get('/Login', renderLogin);
+
+router.get('/Registro', renderRegistro);
 
 
 module.exports = router;
