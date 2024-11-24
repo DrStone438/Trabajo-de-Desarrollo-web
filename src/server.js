@@ -21,7 +21,7 @@ app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(express.urlencoded({extended: false}));
-
+app.use(express.json()); // Esto permite manejar datos enviados como JSON
 // Global Variables
 
 
