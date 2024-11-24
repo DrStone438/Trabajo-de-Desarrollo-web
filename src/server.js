@@ -1,13 +1,14 @@
 const express = require('express');
 const { create } = require('express-handlebars');
 const path = require('path');
+
 // Initializations
 const app = express();
 
 // Settings
 app.set('port', process.env.PORT || 4000);
 app.set('views', path.join(__dirname , 'views'));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const hbs = create({
     defaultLayout: 'main',
@@ -25,12 +26,10 @@ app.use(express.urlencoded({extended: false}));
 
 
 // Routes
-app.get('/', (req, res) => {
-    res.render('index')
-});
+app.use(require('./routes/index.routes'));
 
 // Static files
-app.use(express.static(path.join(__dirname, ' públic')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 module.exports = app;
