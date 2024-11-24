@@ -21,12 +21,13 @@ app.set('view engine', '.hbs');
 
 // Middlewares
 app.use(express.urlencoded({extended: false}));
-
+app.use(express.json()); // Esto permite manejar datos enviados como JSON
 // Global Variables
 
 
 // Routes
 app.use(require('./routes/index.routes'));
+app.use(require('./routes/users.routes'));
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
