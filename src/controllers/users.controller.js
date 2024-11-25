@@ -5,7 +5,7 @@ usersCtrl.renderSignUpForm = (req, res) => {
 }
 
 usersCtrl.signup = (req, res) => {
-    res.send('recivido');
+    res.send('recibido');
 }
 
 usersCtrl.renderSigninForm = (req, res) => {
